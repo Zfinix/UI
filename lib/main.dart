@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           Theme.of(context).textTheme,
         ),
       ),
-      home: PageTwo(),
+      home: MyHomePage(),
     );
   }
 }
@@ -222,122 +222,131 @@ class CardOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Container(
-          margin: EdgeInsets.all(20),
-          height: screenHeight(context, percent: 0.45),
-          width: screenWidth(context, percent: 0.5),
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.black.withOpacity(0.6),
-                  blurRadius: 23,
-                  offset: Offset(24, 5),
-                  spreadRadius: -11),
-            ],
-            color: Colors.black87,
-            borderRadius: BorderRadius.circular(30),
+    return InkResponse(
+      onTap: ()=>
+       Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => PageTwo(),
           ),
         ),
-        Container(
-          height: 45,
-          width: 45,
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.redAccent.withOpacity(0.9),
-                  blurRadius: 16,
-                  offset: Offset(4, 10),
-                  spreadRadius: -8),
-            ],
-            color: red,
-            borderRadius: BorderRadius.circular(30),
+      child: Stack(
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.all(20),
+            height: screenHeight(context, percent: 0.45),
+            width: screenWidth(context, percent: 0.5),
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black.withOpacity(0.6),
+                    blurRadius: 23,
+                    offset: Offset(24, 5),
+                    spreadRadius: -11),
+              ],
+              color: Colors.black87,
+              borderRadius: BorderRadius.circular(30),
+            ),
           ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(30),
-            child: Material(
-              color: Colors.transparent,
-              child: InkWell(
-                onTap: () {},
-                child: Icon(
-                  Icons.favorite,
-                  size: 16,
-                  color: Colors.white,
+          Container(
+            height: 45,
+            width: 45,
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.redAccent.withOpacity(0.9),
+                    blurRadius: 16,
+                    offset: Offset(4, 10),
+                    spreadRadius: -8),
+              ],
+              color: red,
+              borderRadius: BorderRadius.circular(30),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(30),
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: () {},
+                  child: Icon(
+                    Icons.favorite,
+                    size: 16,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
           ),
-        ),
-        Padding(
-            padding: EdgeInsets.only(left: 120, top: 50),
-            child: Image.asset(
-              'assets/images/food1.png',
-              scale: 3.3,
-            )),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: Padding(
-              padding: EdgeInsets.all(30).add(EdgeInsets.only(
-                bottom: 10,
+          Padding(
+              padding: EdgeInsets.only(left: 120, top: 50),
+              child: Image.asset(
+                'assets/images/food1.png',
+                scale: 3.3,
               )),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Container(
-                              height: 9,
-                              width: 9,
-                              color: Colors.redAccent,
-                            )),
-                      ),
-                      RichText(
-                          text: TextSpan(
-                              text: 'Italian',
-                              style: GoogleFonts.quicksand(
-                                  textStyle: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.w200)),
-                              children: [
-                            TextSpan(
-                                text: '\nPasta',
-                                style: GoogleFonts.dMSerifDisplay(
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+                padding: EdgeInsets.all(30).add(EdgeInsets.only(
+                  bottom: 10,
+                )),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Container(
+                                height: 9,
+                                width: 9,
+                                color: Colors.redAccent,
+                              )),
+                        ),
+                        RichText(
+                            text: TextSpan(
+                                text: 'Italian',
+                                style: GoogleFonts.quicksand(
                                     textStyle: TextStyle(
-                                        letterSpacing: 3,
                                         color: Colors.white,
                                         fontSize: 22,
-                                        fontWeight: FontWeight.w600)))
-                          ])),
-                    ],
-                  ),
-                  const YMargin(10),
-                  Container(
-                      margin: EdgeInsets.all(10),
-                      width: screenWidth(context, percent: 0.4),
-                      child: Text(
-                          'Pasta is a type of Italian food typically made from an unleavened dough of durum wheat flour mixed with water or eggs.',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 13,
-                              height: 1.3,
-                              fontWeight: FontWeight.w100)))
-                ],
-              )),
-        ),
-        Container(
-          margin: EdgeInsets.all(20),
-          height: screenHeight(context, percent: 0.5),
-          width: screenWidth(context, percent: 0.5),
-        )
-      ],
+                                        fontWeight: FontWeight.w200)),
+                                children: [
+                              TextSpan(
+                                  text: '\nPasta',
+                                  style: GoogleFonts.dMSerifDisplay(
+                                      textStyle: TextStyle(
+                                          letterSpacing: 3,
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.w600)))
+                            ])),
+                      ],
+                    ),
+                    const YMargin(10),
+                    Container(
+                        margin: EdgeInsets.all(10),
+                        width: screenWidth(context, percent: 0.4),
+                        child: Text(
+                            'Pasta is a type of Italian food typically made from an unleavened dough of durum wheat flour mixed with water or eggs.',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 13,
+                                height: 1.3,
+                                fontWeight: FontWeight.w100)))
+                  ],
+                )),
+          ),
+          Container(
+            margin: EdgeInsets.all(20),
+            height: screenHeight(context, percent: 0.5),
+            width: screenWidth(context, percent: 0.5),
+          )
+        ],
+      ),
     );
   }
 }

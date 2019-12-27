@@ -16,10 +16,10 @@ class _PageTwoState extends State<PageTwo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black.withOpacity(0.57),
+      backgroundColor: Colors.black,
       body: Stack(children: <Widget>[
         Container(
-          color: Colors.black.withOpacity(0.57),
+          color: Colors.red,
           child: Column(
             children: <Widget>[
               const YMargin(40),
@@ -165,7 +165,7 @@ class _PageTwoState extends State<PageTwo> {
           margin: EdgeInsets.only(top: 500),
           width: screenWidth(context),
           decoration: BoxDecoration(
-              color: Colors.white,
+              color: Colors.black87,
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(40), topRight: Radius.circular(40))),
           child: Column(
@@ -176,8 +176,87 @@ class _PageTwoState extends State<PageTwo> {
                   height: 8,
                   width: 180,
                   decoration: BoxDecoration(
-                      color: Color(0xfff5f5f5),
-                      borderRadius: BorderRadius.circular(10)))
+                      color: Colors.grey.shade900,
+                      borderRadius: BorderRadius.circular(10))),
+              Padding(
+                padding: const EdgeInsets.all(28.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        const XMargin(10),
+                        Text('Directions',
+                            style: GoogleFonts.quicksand(
+                              textStyle: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w800,
+                                  fontSize: 15),
+                            )),
+                      ],
+                    ),
+                    const YMargin(20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              left: 20.0, top: 7, right: 20),
+                          child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Container(
+                                height: 5,
+                                width: 5,
+                                color: Colors.redAccent,
+                              )),
+                        ),
+                        Container(
+                          width: screenWidth(context, percent: 0.7),
+                          child: Text(
+                            'Pick a roomy pot that gives the pasta plenty of space to move around in. This is a good time to call that eight-or 12-quart stockpot into action.',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w200,
+                                fontSize: 15,
+                                height: 1.4,
+                                color: Colors.blueGrey.shade500),
+                          ),
+                        ),
+                      ],
+                    ),
+                    YMargin(30),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              left: 20.0, top: 7, right: 20),
+                          child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Container(
+                                height: 5,
+                                width: 5,
+                                color: Colors.redAccent,
+                              )),
+                        ),
+                        Container(
+                          width: screenWidth(context, percent: 0.7),
+                          child: Text(
+                            'Load up the pot with lots of waterYou want five or six quarts of water for a standard 16 oz. package of pasta.',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w200,
+                                fontSize: 15,
+                                height: 1.4,
+                                color: Colors.blueGrey.shade500),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         )
