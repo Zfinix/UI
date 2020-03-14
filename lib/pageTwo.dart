@@ -113,7 +113,7 @@ class _PageTwoState extends State<PageTwo> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: <Widget>[
                               XMargin(50),
-                              Icon(CupertinoIcons.clock, color: red),
+                              Icon(CupertinoIcons.clock, color: Colors.white),
                               XMargin(20),
                               Text(
                                 '54 MINS',
@@ -127,7 +127,7 @@ class _PageTwoState extends State<PageTwo> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: <Widget>[
                               XMargin(50),
-                              Icon(CupertinoIcons.person, color: red),
+                              Icon(CupertinoIcons.person, color: Colors.white),
                               XMargin(20),
                               Text(
                                 '3 PEOPLE',
@@ -141,7 +141,7 @@ class _PageTwoState extends State<PageTwo> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: <Widget>[
                               XMargin(50),
-                              Icon(CupertinoIcons.heart, color: red),
+                              Icon(CupertinoIcons.heart, color: Colors.white),
                               XMargin(20),
                               Text(
                                 '54 CALORIES',
